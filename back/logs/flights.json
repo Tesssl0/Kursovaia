@@ -1,0 +1,15 @@
+[
+    {
+        "aircraft": 1,
+        "arrivalTime": "2026-05-12 22:11:00",
+        "departureTime": "2026-05-11 22:11:00",
+        "destination": "KZN",
+        "gate": "67",
+        "id": 16,
+        "number": "67",
+        "origin": "DME",
+        "seats": 150,
+        "status": "cancelled",
+        "terminal": "67"
+    }
+]

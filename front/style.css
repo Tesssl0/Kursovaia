@@ -1,0 +1,929 @@
+/* Основные стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-block-size: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-inline-size: 1400px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    overflow: hidden;
+    min-block-size: 90vh;
+}
+
+/* Шапка */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: linear-gradient(90deg, #2c3e50, #4a6491);
+    color: white;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo i {
+    font-size: 2.5rem;
+    color: #3498db;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.logo-subtitle {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-inline-start: 10px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,255,255,0.1);
+    padding: 10px 20px;
+    border-radius: 50px;
+    position: relative; 
+    cursor: pointer;
+}
+
+.user-info i {
+    font-size: 1.5rem;
+}
+
+/* Навигация */
+.main-nav {
+    display: flex;
+    background: #f8f9fa;
+    border-block-end: 2px solid #e9ecef;
+    padding: 0 20px;
+}
+
+.nav-link {
+    padding: 15px 25px;
+    text-decoration: none;
+    color: #495057;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s;
+    border-block-end: 3px solid transparent;
+}
+
+.nav-link:hover {
+    background: #e9ecef;
+    color: #007bff;
+}
+
+.nav-link.active {
+    color: #007bff;
+    border-block-end-color: #007bff;
+    background: #e3f2fd;
+}
+
+/* Основной контент */
+.main-content {
+    padding: 30px;
+}
+
+.content-section {
+    display: none;
+    animation: fadeIn 0.5s;
+}
+
+.content-section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Карточки статистики */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-icon {
+    inline-size: 60px;
+    block-size: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.8rem;
+}
+
+.stat-info h3 {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-block-end: 5px;
+}
+
+.stat-number {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+/* Секции дашборда */
+.dashboard-section {
+    margin: 40px 0;
+}
+
+.dashboard-section h3 {
+    color: #2c3e50;
+    margin-block-end: 20px;
+    padding-block-end: 10px;
+    border-block-end: 2px solid #f0f0f0;
+}
+
+.flights-list {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.flight-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-block-end: 1px solid #eee;
+    transition: background 0.3s;
+}
+
+.flight-item:hover {
+    background: #f8f9fa;
+}
+
+.flight-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.flight-number {
+    font-weight: 700;
+    color: #2c3e50;
+    font-size: 1.1rem;
+}
+
+.flight-route {
+    color: #6c757d;
+}
+
+.flight-time {
+    font-weight: 500;
+    color: #495057;
+}
+
+.flight-status {
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.status-scheduled { background: #d4edda; color: #155724; }
+.status-delayed { background: #f8d7da; color: #721c24; }
+.status-departed { background: #cce5ff; color: #004085; }
+
+/* Быстрые действия */
+.quick-actions {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.action-btn {
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+    transition: transform 0.3s;
+}
+
+.action-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* Таблицы */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-block-end: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.controls input, .controls select {
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.table-container {
+    overflow-x: auto;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.data-table {
+    inline-size: 100%;
+    border-collapse: collapse;
+}
+
+.data-table th {
+    background: #2c3e50;
+    color: white;
+    padding: 15px;
+    text-align: start;
+    font-weight: 500;
+}
+
+.data-table td {
+    padding: 15px;
+    border-block-end: 1px solid #eee;
+}
+
+.data-table tr:hover {
+    background: #f8f9fa;
+}
+
+/* Кнопки */
+.btn-primary, .btn-secondary, .btn-danger, .btn-success {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background: #2196f3;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #0056b3;
+}
+
+.btn-secondary {
+    background: #2196f3;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #0056b3;
+}
+
+.btn-danger {
+    background: #dc3545;
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #c82333;
+}
+
+.btn-success {
+    background: #28a745;
+    color: white;
+}
+
+.btn-success:hover {
+    background: #218838;
+}
+
+/* Календарь */
+.calendar-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0;
+}
+
+.calendar {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.calendar-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    font-weight: 500;
+}
+
+.day-header {
+    padding: 15px;
+    border-inline-end: 1px solid #34495e;
+}
+
+.calendar-body {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    min-block-size: 500px;
+}
+
+.calendar-day {
+    padding: 15px;
+    border-inline-end: 1px solid #eee;
+    border-block-end: 1px solid #eee;
+    min-block-size: 120px;
+}
+
+.day-number {
+    font-weight: 700;
+    color: #2c3e50;
+    margin-block-end: 10px;
+}
+
+.calendar-event {
+    background: #e3f2fd;
+    padding: 5px 10px;
+    margin: 3px 0;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.calendar-event:hover {
+    background: #bbdefb;
+}
+
+/* Формы */
+.form {
+    max-inline-size: 800px;
+    margin: 30px auto;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+    margin-block-end: 20px;
+}
+
+.form-group {
+    flex: 1;
+}
+
+.form-group label {
+    display: block;
+    margin-block-end: 8px;
+    color: #495057;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.form-group input, .form-group select {
+    inline-size: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border 0.3s;
+}
+
+.form-group input:focus, .form-group select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-block-start: 30px;
+}
+
+/* Сетка самолетов */
+.aircraft-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-block-start: 30px;
+}
+
+.aircraft-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.aircraft-card:hover {
+    transform: translateY(-5px);
+}
+
+.aircraft-card h3 {
+    color: #2c3e50;
+    margin-block-end: 10px;
+}
+
+.aircraft-info {
+    display: flex;
+    justify-content: space-between;
+    margin-block-start: 15px;
+    padding-block-start: 15px;
+    border-block-start: 1px solid #eee;
+}
+
+/* Аэропорты */
+.airports-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+    margin-block-start: 30px;
+}
+
+.airport-card {
+    background: white;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    position: relative;
+    border-inline-start: 4px solid #3498db;
+}
+
+.airport-code {
+    position: absolute;
+    inset-block-start: 20px;
+    inset-inline-end: 20px;
+    background: #3498db;
+    color: white;
+    inline-size: 40px;
+    block-size: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.airport-card h3 {
+    color: #2c3e50;
+    margin-block-end: 5px;
+}
+
+.airport-card p {
+    color: #6c757d;
+    margin: 5px 0;
+}
+
+/* Пагинация */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-block-start: 30px;
+}
+
+.page-btn {
+    inline-size: 40px;
+    block-size: 40px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.page-btn:hover {
+    background: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.notification.error {
+    background: #dc3545;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.notification button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0 5px;
+}
+
+/* Подвал */
+.footer {
+    margin-block-start: 50px;
+    padding: 20px 40px;
+    background: #f8f9fa;
+    border-block-start: 1px solid #e9ecef;
+    text-align: center;
+    color: #6c757d;
+}
+
+.footer-info {
+    font-size: 0.9rem;
+    margin-block-start: 5px;
+    opacity: 0.7;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .container {
+        margin: 10px;
+        border-radius: 10px;
+    }
+    
+    .header {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+        padding: 20px;
+    }
+    
+    .main-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .section-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .controls {
+        flex-wrap: wrap;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    inset-inline-start: 0;
+    inset-block-start: 0;
+    inline-size: 100%;
+    block-size: 100%;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 25px;
+    inline-size: 420px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    animation: fadeIn 0.2s ease;
+}
+
+.modal-content h2 {
+    margin-block-start: 0;
+}
+
+.modal-content input,
+.modal-content select {
+    inline-size: 100%;
+    margin-block-end: 12px;
+    padding: 8px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.modal-actions .btn-secondary {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.calendar-day {
+    border: 1px solid #ddd;
+    padding: 10px;
+    min-block-size: 120px;
+    background: #fff;
+}
+
+.day-number {
+    font-weight: bold;
+    margin-block-end: 8px;
+}
+
+.calendar-flight {
+    background: #f5f5f5;
+    padding: 4px 6px;
+    margin-block-end: 4px;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+/* Общий стиль */
+.calendar-flight {
+    cursor: pointer;
+    transition: background 0.2s, border 0.2s;
+    border-inline-start: 4px solid transparent;
+}
+
+/* По расписанию */
+.calendar-flight.status-scheduled {
+    border-inline-start-color: #2196F3;
+}
+
+/* Задержан */
+.calendar-flight.status-delayed {
+    border-inline-start-color: #FF5722;
+    background: #fff3e0;
+}
+
+/* Вылетел */
+.calendar-flight.status-departed {
+    border-inline-start-color: #4CAF50;
+}
+
+/* Прибыл */
+.calendar-flight.status-arrived {
+    border-inline-start-color: #9E9E9E;
+}
+
+/* Отменён */
+.calendar-flight.status-cancelled {
+    border-inline-start-color: #000;
+    background: #f5f5f5;
+}
+
+.flight-aircraft {
+    display: block;
+    font-size: 12px;
+    color: #555;
+    margin-block-start: 2px;
+}
+
+.calendar-flight {
+    padding: 6px 8px;
+    background: #fff;
+    border-radius: 6px;
+    margin-block-end: 6px;
+    border-inline-start: 4px solid transparent;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    font-size: 13px;
+}
+
+.calendar-flight:hover {
+    background: #f3f7ff;
+    transform: scale(1.01);
+}
+
+/* Верхняя строка: время + номер */
+.flight-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    margin-block-end: 4px;
+}
+
+/* Маршрут */
+.flight-route {
+    margin-block-end: 4px;
+    color: #333;
+}
+
+/* Самолёт */
+.flight-aircraft {
+    font-size: 12px;
+    color: #555;
+    margin-block-end: 4px;
+}
+
+/* Терминал + Gate */
+.flight-extra {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #666;
+}
+
+.tab-switch {
+    display: flex;
+    gap: 10px;
+    margin-block-end: 20px;
+}
+
+.tab-btn {
+    padding: 10px 20px;
+    font-weight: bold;
+    border: none;
+    background-color: #eee;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.tab-btn.active {
+    background-color: #2196f3;
+    color: white;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-inline-size: 300px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    inline-size: 300px;
+}
+
+.tab-switch {
+    display: flex;
+    gap: 10px;
+    margin-block-end: 15px;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 8px;
+    font-weight: bold;
+    border: none;
+    background-color: #eee;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.tab-btn.active {
+    background-color: #2196f3;
+    color: white;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.logout-btn {
+    background: transparent; /* делает кнопку однотонной с фоном */
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 50px;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: none;
+    transition: background 0.2s;
+}
+
+.logout-btn:hover {
+    background: rgba(255, 255, 255, 0.5); /* лёгкое затемнение при наведении */
+}
+
+/* Однотонные кнопки для входа/выхода/регистрации */
+.user-info .btn-small {
+    background: rgba(255, 255, 255, 0.1); /* Серый цвет, как у btn-secondary */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-weight: 500;
+    box-shadow: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.user-info .btn-small:hover {
+    background: #5a6268; /* Немного темнее при наведении */
+}
+
+/* Убираем градиенты и эффекты при наведении */
+.user-info .btn-small:active,
+.user-info .btn-small:focus {
+    background: #6c757d;
+    box-shadow: none;
+    transform: none;
+}
+
+/* Для кнопки входа в модальном окне (если нужно) */
+.auth-modal .btn-small {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.auth-modal .btn-small:hover {
+    background: #5a6268;
+}
+
+.input-hint {
+    font-size: 12px;
+    color: #ff4d4d;
+    min-block-size: 16px;
+    margin-block-start: -5px;
+    margin-block-end: 5px;
+}
